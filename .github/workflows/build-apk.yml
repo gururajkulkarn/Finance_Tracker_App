@@ -17,6 +17,12 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
       - name: Install dependencies
         run: npm install
 
@@ -32,16 +38,10 @@ jobs:
       - name: Build Vite App
         run: npm run build
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '21'
-          distribution: 'temurin'
-
-      - name: Install Capacitor Android
+      - name: Install Capacitor
         run: npm install @capacitor/core @capacitor/cli @capacitor/android
 
-      - name: Sync Capacitor Android
+      - name: Sync Capacitor
         run: npx cap sync android
 
       - name: Make Gradle executable
@@ -50,7 +50,7 @@ jobs:
       - name: Build Debug APK
         run: |
           cd android
-          ./gradlew assembleDebug --no-daemon
+          ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
