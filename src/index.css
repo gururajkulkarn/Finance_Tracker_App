@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #F4F7FB;
+  color: #16213A;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #2563EB;
+  color: #FFFFFF;
+}
+
+/* scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Signature element: a receipt/ticket edge — perforated top & bottom */
+  .ticket-edge {
+    position: relative;
+  }
+  .ticket-edge::before,
+  .ticket-edge::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background-image:
+      radial-gradient(circle, #E3E8EF 5px, transparent 5px),
+      radial-gradient(circle, #F4F7FB 4.5px, transparent 4.5px);
+    background-size: 16px 10px;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
+  .ticket-edge::before { top: -5px; }
+  .ticket-edge::after { bottom: -5px; }
+
+  /* Ledger line: label ... dotted leader ... amount */
+  .ledger-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+  .ledger-row .leader {
+    flex: 1 1 auto;
+    border-bottom: 1px dotted #CBD5E1;
+    margin-bottom: 4px;
+    min-width: 12px;
+  }
+
+  .focus-ring {
+    outline: none;
+  }
+  .focus-ring:focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
