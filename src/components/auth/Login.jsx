@@ -28,7 +28,7 @@ export default function Login() {
           <div className="grid h-14 w-14 place-items-center rounded-2xl bg-sage/15 border border-sage/30 text-sage-bright mb-5">
             <Wallet size={26} strokeWidth={2} />
           </div>
-          <h1 className="font-display text-3xl text-ledger-text">Ledger</h1>
+          <h1 className="font-display text-3xl text-ledger-text">GharKhata</h1>
           <p className="mt-2 text-sm text-ledger-muted leading-relaxed">
             Keep your household budget, every line of it, in one calm place.
           </p>
