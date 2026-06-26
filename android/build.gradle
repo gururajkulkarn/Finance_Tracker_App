@@ -5,7 +5,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.2.2'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.24'
     }
 }
 
@@ -19,9 +19,9 @@ allprojects {
     
     configurations.all {
         resolutionStrategy {
-            force 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
-            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10'
-            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10'
+            force 'org.jetbrains.kotlin:kotlin-stdlib:1.9.24'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.24'
+            force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24'
         }
     }
 }
