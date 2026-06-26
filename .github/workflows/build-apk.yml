@@ -42,7 +42,7 @@ jobs:
         run: npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: Sync Capacitor Android
-        run: npx cap sync android --no-open
+        run: npx cap sync android
 
       - name: Make Gradle executable
         run: chmod +x android/gradlew
