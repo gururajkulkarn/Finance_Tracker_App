@@ -31,6 +31,8 @@ export function AuthProvider({ children }) {
     }
   }
 
+// 
+
   const signOut = async () => {
     setError('')
     try {
